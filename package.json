@@ -24,6 +24,7 @@
     "@fancyapps/fancybox": "^3.5.7",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-cssmin": "^0.2.0",
+    "gulp-less": "^4.0.1",
     "normalize.css": "^8.0.1",
     "rateyo": "^3.0.0-alpha.2",
     "slick-carousel": "^1.8.1"

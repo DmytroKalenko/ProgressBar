@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
+    // sass = require('gulp-sass'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create(),
@@ -8,14 +8,29 @@ var gulp = require('gulp'),
     cssmin = require('gulp-cssmin');
 
 
-gulp.task('sass', function() { //convert sass to css
-    return gulp.src('scss/style.scss') //create file.scss
-        .pipe(sass({ outputStyle: 'compressed' }))
+var less = require('gulp-less');
+var path = require('path');
+
+gulp.task('less', function() {
+    return gulp.src('less/style.less')
+        .pipe(less({
+            paths: [path.join(__dirname, 'less', 'includes')]
+        }))
+        .pipe(less({ outputStyle: 'compressed' }))
         .pipe(rename({ suffix: '.min' })) // create min file css
         .pipe(autoprefixer({ overrideBrowserslist: ['last 8 versions'] })) // add prefixs -ms, -webkit
         .pipe(gulp.dest('css'))
         .pipe(browserSync.reload({ stream: true })) // update site page
 });
+
+// gulp.task('sass', function() { //convert sass to css
+//     return gulp.src('scss/style.scss') //create file.scss
+//         .pipe(sass({ outputStyle: 'compressed' }))
+//         .pipe(rename({ suffix: '.min' })) // create min file css
+//         .pipe(autoprefixer({ overrideBrowserslist: ['last 8 versions'] })) // add prefixs -ms, -webkit
+//         .pipe(gulp.dest('css'))
+//         .pipe(browserSync.reload({ stream: true })) // update site page
+// });
 
 gulp.task('style', function() { ///add CSS files our option counten __slick_slider and other
     return gulp.src([
@@ -61,9 +76,11 @@ gulp.task('browser-sync', function() { // update site page
 });
 
 gulp.task('watch', function() { //auto update file
-    gulp.watch('scss/**/*.scss', gulp.parallel('sass'))
+    gulp.watch('less/**/*.less', gulp.parallel('less'))
     gulp.watch('*.html', gulp.parallel('html'))
     gulp.watch('js/*.js', gulp.parallel('js'))
 })
 
-gulp.task('default', gulp.parallel('sass', 'watch', 'browser-sync', 'script', 'style'))
+//if do you wana use SASS , you gota change 'less' on 'sass'
+
+gulp.task('default', gulp.parallel('less', 'watch', 'browser-sync', 'script', 'style'))

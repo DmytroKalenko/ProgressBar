@@ -1,8 +1,7 @@
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "RobotoCondensed";
-  background-color: #ff8800;
+  background-color: aqua;
 }
 body {
   background-color: #f4f6f5;
