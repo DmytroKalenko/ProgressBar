@@ -1,5 +1,4 @@
 var gulp = require('gulp'),
-    // sass = require('gulp-sass'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create(),
@@ -22,15 +21,6 @@ gulp.task('less', function() {
         .pipe(gulp.dest('css'))
         .pipe(browserSync.reload({ stream: true })) // update site page
 });
-
-// gulp.task('sass', function() { //convert sass to css
-//     return gulp.src('scss/style.scss') //create file.scss
-//         .pipe(sass({ outputStyle: 'compressed' }))
-//         .pipe(rename({ suffix: '.min' })) // create min file css
-//         .pipe(autoprefixer({ overrideBrowserslist: ['last 8 versions'] })) // add prefixs -ms, -webkit
-//         .pipe(gulp.dest('css'))
-//         .pipe(browserSync.reload({ stream: true })) // update site page
-// });
 
 gulp.task('style', function() { ///add CSS files our option counten __slick_slider and other
     return gulp.src([
