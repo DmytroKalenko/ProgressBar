@@ -60,7 +60,7 @@ button {
     .line {
         width: 0;
         height: 60%;
-        background-image: -webkit-linear-gradient(-180deg, rgb(193, 72, 196) 0%, rgb(70, 52, 114) 100%);
+        background-image: -webkit-linear-gradient(-180deg, rgb(229, 255, 0) 0%, rgb(255, 153, 1) 100%);
         border-top-right-radius: 1rem;
         border-bottom-right-radius: 1rem;
     }
@@ -93,9 +93,12 @@ button {
 
 // X-Small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
+    .backgroud {
+        background: url(../images/BG_mobile.jpg) center
+    }
+
     .parallax {
         .text {
-            max-width: 90%;
             margin: 3rem auto;
             padding: 1rem;
         }
@@ -103,15 +106,23 @@ button {
 }
 
 // Small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) {
+@media (max-width: 769.98px) {
+    .backgroud {
+        background: url(../images/BG_tablet.jpg) center;
+        background-size: cover;
 
-    body,
-    html {
-        font-size: 13px;
     }
 
-    .parallax .text h1 {
-        margin: 0 0 1rem;
+
+    .parallax {
+        .text {
+            max-width: 90%;
+            padding: 1.4rem;
+
+            h1 {
+                margin: 0 0 1rem;
+            }
+        }
     }
 }
 
