@@ -23,7 +23,7 @@ button {
   cursor: pointer;
 }
 .backgroud {
-  background: url(/images/_DSC0034.jpg) center fixed;
+  background: url(../images/_DSC0034.jpg) center fixed;
   background-size: cover;
   height: 120%;
   width: 140%;
