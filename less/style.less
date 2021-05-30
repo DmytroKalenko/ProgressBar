@@ -27,7 +27,7 @@ button {
 }
 
 .backgroud {
-    background: url(/images/BG.jpg) center fixed;
+    background: url(/images/_DSC0034.jpg) center fixed;
     background-size: cover;
     height: 120%;
     width: 140%;
@@ -83,5 +83,37 @@ button {
         p {
             text-align: justify;
         }
+    }
+}
+
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .parallax {
+        .text {
+            max-width: 90%;
+            margin: 3rem auto;
+            padding: 1rem;
+        }
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+
+    body,
+    html {
+        font-size: 13px;
+    }
+
+    .parallax .text h1 {
+        margin: 0 0 1rem;
+    }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (min-width: 991.98px) {
+    .parallax .text {
+        max-width: 80%;
     }
 }
